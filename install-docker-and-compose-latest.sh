@@ -1,4 +1,3 @@
-#!/usr/bin/bash
 apt-get remove docker docker-engine docker.io containerd runc
 apt-get update
 apt-get install ca-certificates curl gnupg lsb-release -y git
@@ -10,6 +9,6 @@ echo \
 apt-get update
 apt-get install docker-ce docker-ce-cli containerd.io docker-compose-plugin -y
 echo 'Testing installation'
-docker run hello-world
+docker run --rm hello-world
 groupadd docker
-usermod -aG docker $USER
+usermod -aG docker ubuntu
